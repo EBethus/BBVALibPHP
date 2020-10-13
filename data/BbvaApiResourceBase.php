@@ -158,8 +158,10 @@ abstract class BbvaApiResourceBase
 
     private function getResource($resourceName) {
         foreach ($this->derivedResources as $resource) {
-            if ($resource->resourceName == $resourceName) {
-                return $resource;
+            if (isset($resource->resourceName)){
+                if ($resource->resourceName == $resourceName) {
+                    return $resource;
+                }
             }
         }
         return false;
